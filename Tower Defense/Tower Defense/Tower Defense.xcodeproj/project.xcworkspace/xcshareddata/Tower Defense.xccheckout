@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CE601019-9147-493F-B73B-D469CD7CD647</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Tower Defense</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E3E540EC-9E81-49BD-AB51-5F6DBBECDA9C</key>
+		<string>ssh://github.com/ConcoMB/iPhoneIsForRichPeople.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Tower Defense/Tower Defense/Tower Defense.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E3E540EC-9E81-49BD-AB51-5F6DBBECDA9C</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/ConcoMB/iPhoneIsForRichPeople.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E3E540EC-9E81-49BD-AB51-5F6DBBECDA9C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E3E540EC-9E81-49BD-AB51-5F6DBBECDA9C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iPhoneIsForRichPeople</string>
+		</dict>
+	</array>
+</dict>
+</plist>
