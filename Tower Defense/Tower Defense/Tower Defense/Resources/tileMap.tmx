@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="15" height="10" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tilea4" tilewidth="32" tileheight="32">
+  <image source="tilea4.png" width="512" height="480"/>
+ </tileset>
+ <layer name="Background" width="15" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxbxMDAsIpMvAiIrcnAML2k2mdDBb0rkPikYHS9pNpPid56KE1OWNeTYR+yvVxkYgCbCEgQ
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="15" height="10">
+  <object name="land_1" x="1" y="0" width="29" height="31"/>
+  <object name="land_2" x="0" y="35" width="30" height="26"/>
+  <object name="land_3" x="1" y="65" width="30" height="28"/>
+  <object name="land_4" x="2" y="97" width="27" height="27"/>
+  <object name="air_1" x="0" y="127" width="29" height="31"/>
+  <object name="air_2" x="1" y="161" width="29" height="29"/>
+  <object name="air_3" x="2" y="193" width="28" height="28"/>
+  <object name="land_and_air_1" x="0" y="225" width="29" height="27"/>
+  <object name="land_and_air_2" x="0" y="258" width="28" height="26"/>
+  <object name="land_and_air_3" x="1" y="290" width="27" height="25"/>
+  <object name="spawn" x="34" y="34" width="30" height="28">
+   <properties>
+    <property name="next_x" value="1"/>
+    <property name="next_y" value="2"/>
+    <property name="x" value="1"/>
+    <property name="y" value="1"/>
+   </properties>
+  </object>
+  <object name="road_1_2" x="68" y="38" width="26" height="24">
+   <properties>
+    <property name="next_x" value="1"/>
+    <property name="next_y" value="3"/>
+   </properties>
+  </object>
+  <object name="road_1_3" x="110" y="47">
+   <properties>
+    <property name="next_x" value="1"/>
+    <property name="next_y" value="4"/>
+   </properties>
+  </object>
+  <object name="road_1_4" x="141" y="49">
+   <properties>
+    <property name="next_x" value="1"/>
+    <property name="next_y" value="5"/>
+   </properties>
+  </object>
+  <object name="road_1_5" x="171" y="48">
+   <properties>
+    <property name="next_x" value="1"/>
+    <property name="next_y" value="6"/>
+   </properties>
+  </object>
+  <object name="road_1_6" x="212" y="45">
+   <properties>
+    <property name="next_x" value="1"/>
+    <property name="next_y" value="7"/>
+   </properties>
+  </object>
+  <object name="road_1_7" x="236" y="48">
+   <properties>
+    <property name="next_x" value="1"/>
+    <property name="next_y" value="8"/>
+   </properties>
+  </object>
+  <object name="road_1_8" x="271" y="48">
+   <properties>
+    <property name="next_x" value="1"/>
+    <property name="next_y" value="9"/>
+   </properties>
+  </object>
+  <object name="road_1_9" x="299" y="47">
+   <properties>
+    <property name="next_x" value="1"/>
+    <property name="next_y" value="10"/>
+   </properties>
+  </object>
+  <object name="road_1_10" x="335" y="51">
+   <properties>
+    <property name="next_x" value="1"/>
+    <property name="next_y" value="11"/>
+   </properties>
+  </object>
+  <object name="road_1_11" x="361" y="48">
+   <properties>
+    <property name="next_x" value="1"/>
+    <property name="next_y" value="12"/>
+   </properties>
+  </object>
+  <object name="road_1_12" x="399" y="46">
+   <properties>
+    <property name="next_x" value="1"/>
+    <property name="next_y" value="13"/>
+   </properties>
+  </object>
+  <object name="road_1_13" x="432" y="45"/>
+  <object x="432" y="82"/>
+  <object x="432" y="111"/>
+  <object x="434" y="146"/>
+  <object x="396" y="148"/>
+  <object x="371" y="147"/>
+  <object x="333" y="143"/>
+  <object x="306" y="142"/>
+  <object x="271" y="148"/>
+  <object x="240" y="143"/>
+  <object x="206" y="148"/>
+  <object x="171" y="143"/>
+  <object x="143" y="143"/>
+  <object x="114" y="144"/>
+  <object x="79" y="147"/>
+  <object x="84" y="178"/>
+  <object x="81" y="206"/>
+  <object x="80" y="237"/>
+  <object x="111" y="238"/>
+  <object x="143" y="241"/>
+  <object x="177" y="240"/>
+  <object x="209" y="241"/>
+  <object x="241" y="239"/>
+  <object x="269" y="238"/>
+  <object x="302" y="239"/>
+  <object x="331" y="241"/>
+  <object x="372" y="240"/>
+  <object x="400" y="240"/>
+  <object x="432" y="240"/>
+  <object x="464" y="238"/>
+ </objectgroup>
+</map>

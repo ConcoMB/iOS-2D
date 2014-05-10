@@ -7,6 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4ECF43C01902FF16005D4819 /* tilea4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF43BF1902FF16005D4819 /* tilea4.png */; };
+		4ECF43C219030186005D4819 /* selected_tower_sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF43C119030186005D4819 /* selected_tower_sprite.png */; };
+		4EE145B918F06C5E009E17E7 /* tower_def_sprites.tps in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145B818F06C5E009E17E7 /* tower_def_sprites.tps */; };
+		4EE145BF18F06D09009E17E7 /* Tower.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE145BE18F06D09009E17E7 /* Tower.m */; };
+		4EE145C218F06D6E009E17E7 /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE145C118F06D6E009E17E7 /* Monster.m */; };
+		4EE145D618F07274009E17E7 /* air_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145C318F07274009E17E7 /* air_1.png */; };
+		4EE145D718F07274009E17E7 /* air_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145C418F07274009E17E7 /* air_2.png */; };
+		4EE145D818F07274009E17E7 /* air_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145C518F07274009E17E7 /* air_3.png */; };
+		4EE145D918F07274009E17E7 /* enemy_air_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145C618F07274009E17E7 /* enemy_air_1.png */; };
+		4EE145DA18F07274009E17E7 /* enemy_air_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145C718F07274009E17E7 /* enemy_air_2.png */; };
+		4EE145DB18F07274009E17E7 /* enemy_air_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145C818F07274009E17E7 /* enemy_air_3.png */; };
+		4EE145DC18F07274009E17E7 /* enemy_air_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145C918F07274009E17E7 /* enemy_air_4.png */; };
+		4EE145DD18F07274009E17E7 /* enemy_land_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145CA18F07274009E17E7 /* enemy_land_1.png */; };
+		4EE145DE18F07274009E17E7 /* enemy_land_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145CB18F07274009E17E7 /* enemy_land_2.png */; };
+		4EE145DF18F07274009E17E7 /* enemy_land_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145CC18F07274009E17E7 /* enemy_land_3.png */; };
+		4EE145E018F07274009E17E7 /* enemy_land_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145CD18F07274009E17E7 /* enemy_land_4.png */; };
+		4EE145E118F07274009E17E7 /* fireball.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145CE18F07274009E17E7 /* fireball.gif */; };
+		4EE145E218F07274009E17E7 /* land_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145CF18F07274009E17E7 /* land_1.png */; };
+		4EE145E318F07274009E17E7 /* land_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145D018F07274009E17E7 /* land_2.png */; };
+		4EE145E418F07274009E17E7 /* land_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145D118F07274009E17E7 /* land_3.png */; };
+		4EE145E518F07274009E17E7 /* land_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145D218F07274009E17E7 /* land_4.png */; };
+		4EE145E618F07274009E17E7 /* land_and_air_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145D318F07274009E17E7 /* land_and_air_1.png */; };
+		4EE145E718F07274009E17E7 /* land_and_air_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145D418F07274009E17E7 /* land_and_air_2.png */; };
+		4EE145E818F07274009E17E7 /* land_and_air_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145D518F07274009E17E7 /* land_and_air_3.png */; };
+		4EE145EA18F07621009E17E7 /* tileMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145E918F07621009E17E7 /* tileMap.tmx */; };
 		4EF38E0418E849B800216078 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF38E0318E849B800216078 /* QuartzCore.framework */; };
 		4EF38E0618E849B800216078 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF38E0518E849B800216078 /* OpenGLES.framework */; };
 		4EF38E0818E849B800216078 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF38E0718E849B800216078 /* OpenAL.framework */; };
@@ -210,20 +235,10 @@
 		4EF390A518E849BA00216078 /* LICENSE_Chipmunk.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4EF390A418E849BA00216078 /* LICENSE_Chipmunk.txt */; };
 		4EF390A918E849BA00216078 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390A818E849BA00216078 /* main.m */; };
 		4EF390AD18E849BA00216078 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390AC18E849BA00216078 /* AppDelegate.m */; };
-		4EF390B018E849BA00216078 /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390AF18E849BA00216078 /* HelloWorldScene.m */; };
 		4EF390B318E849BA00216078 /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390B218E849BA00216078 /* IntroScene.m */; };
-		4EF390B718E849BA00216078 /* NewtonScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390B618E849BA00216078 /* NewtonScene.m */; };
-		4EF390BA18E849BA00216078 /* NewtonSphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390B918E849BA00216078 /* NewtonSphere.m */; };
-		4EF390BD18E849BA00216078 /* LightBulb.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390BC18E849BA00216078 /* LightBulb.m */; };
-		4EF390C018E849BA00216078 /* Rope.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390BF18E849BA00216078 /* Rope.m */; };
 		4EF390C218E849BA00216078 /* fire.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF390C118E849BA00216078 /* fire.plist */; };
 		4EF390C418E849BA00216078 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF390C318E849BA00216078 /* fire.png */; };
-		4EF390C618E849BA00216078 /* newton-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF390C518E849BA00216078 /* newton-ipadhd.plist */; };
-		4EF390C818E849BA00216078 /* newton-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF390C718E849BA00216078 /* newton-ipadhd.png */; };
-		4EF390CA18E849BA00216078 /* newton-ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF390C918E849BA00216078 /* newton-ipad.plist */; };
-		4EF390CC18E849BA00216078 /* newton-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF390CB18E849BA00216078 /* newton-ipad.png */; };
-		4EF390CE18E849BA00216078 /* newton.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF390CD18E849BA00216078 /* newton.plist */; };
-		4EF390D018E849BA00216078 /* newton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF390CF18E849BA00216078 /* newton.png */; };
+		4EF390DB18E84DE000216078 /* PlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390DA18E84DE000216078 /* PlayScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,6 +252,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4ECF43BF1902FF16005D4819 /* tilea4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tilea4.png; path = Resources/tilea4.png; sourceTree = "<group>"; };
+		4ECF43C119030186005D4819 /* selected_tower_sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = selected_tower_sprite.png; path = Resources/selected_tower_sprite.png; sourceTree = "<group>"; };
+		4EE145B818F06C5E009E17E7 /* tower_def_sprites.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tower_def_sprites.tps; path = Resources/tower_def_sprites.tps; sourceTree = "<group>"; };
+		4EE145BD18F06D09009E17E7 /* Tower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tower.h; path = Classes/Tower.h; sourceTree = "<group>"; };
+		4EE145BE18F06D09009E17E7 /* Tower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tower.m; path = Classes/Tower.m; sourceTree = "<group>"; };
+		4EE145C018F06D6E009E17E7 /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Monster.h; path = Classes/Monster.h; sourceTree = "<group>"; };
+		4EE145C118F06D6E009E17E7 /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Monster.m; path = Classes/Monster.m; sourceTree = "<group>"; };
+		4EE145C318F07274009E17E7 /* air_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = air_1.png; path = Resources/air_1.png; sourceTree = "<group>"; };
+		4EE145C418F07274009E17E7 /* air_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = air_2.png; path = Resources/air_2.png; sourceTree = "<group>"; };
+		4EE145C518F07274009E17E7 /* air_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = air_3.png; path = Resources/air_3.png; sourceTree = "<group>"; };
+		4EE145C618F07274009E17E7 /* enemy_air_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy_air_1.png; path = Resources/enemy_air_1.png; sourceTree = "<group>"; };
+		4EE145C718F07274009E17E7 /* enemy_air_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy_air_2.png; path = Resources/enemy_air_2.png; sourceTree = "<group>"; };
+		4EE145C818F07274009E17E7 /* enemy_air_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy_air_3.png; path = Resources/enemy_air_3.png; sourceTree = "<group>"; };
+		4EE145C918F07274009E17E7 /* enemy_air_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy_air_4.png; path = Resources/enemy_air_4.png; sourceTree = "<group>"; };
+		4EE145CA18F07274009E17E7 /* enemy_land_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy_land_1.png; path = Resources/enemy_land_1.png; sourceTree = "<group>"; };
+		4EE145CB18F07274009E17E7 /* enemy_land_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy_land_2.png; path = Resources/enemy_land_2.png; sourceTree = "<group>"; };
+		4EE145CC18F07274009E17E7 /* enemy_land_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy_land_3.png; path = Resources/enemy_land_3.png; sourceTree = "<group>"; };
+		4EE145CD18F07274009E17E7 /* enemy_land_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy_land_4.png; path = Resources/enemy_land_4.png; sourceTree = "<group>"; };
+		4EE145CE18F07274009E17E7 /* fireball.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = fireball.gif; path = Resources/fireball.gif; sourceTree = "<group>"; };
+		4EE145CF18F07274009E17E7 /* land_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = land_1.png; path = Resources/land_1.png; sourceTree = "<group>"; };
+		4EE145D018F07274009E17E7 /* land_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = land_2.png; path = Resources/land_2.png; sourceTree = "<group>"; };
+		4EE145D118F07274009E17E7 /* land_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = land_3.png; path = Resources/land_3.png; sourceTree = "<group>"; };
+		4EE145D218F07274009E17E7 /* land_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = land_4.png; path = Resources/land_4.png; sourceTree = "<group>"; };
+		4EE145D318F07274009E17E7 /* land_and_air_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = land_and_air_1.png; path = Resources/land_and_air_1.png; sourceTree = "<group>"; };
+		4EE145D418F07274009E17E7 /* land_and_air_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = land_and_air_2.png; path = Resources/land_and_air_2.png; sourceTree = "<group>"; };
+		4EE145D518F07274009E17E7 /* land_and_air_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = land_and_air_3.png; path = Resources/land_and_air_3.png; sourceTree = "<group>"; };
+		4EE145E918F07621009E17E7 /* tileMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tileMap.tmx; path = Resources/tileMap.tmx; sourceTree = "<group>"; };
 		4EF38E0018E849B800216078 /* Tower Defense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tower Defense.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF38E0318E849B800216078 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4EF38E0518E849B800216078 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -661,27 +703,12 @@
 		4EF390A818E849BA00216078 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Supporting Files/main.m"; sourceTree = "<group>"; };
 		4EF390AB18E849BA00216078 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		4EF390AC18E849BA00216078 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
-		4EF390AE18E849BA00216078 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		4EF390AF18E849BA00216078 /* HelloWorldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HelloWorldScene.m; path = Classes/HelloWorldScene.m; sourceTree = "<group>"; };
 		4EF390B118E849BA00216078 /* IntroScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IntroScene.h; path = Classes/IntroScene.h; sourceTree = "<group>"; };
 		4EF390B218E849BA00216078 /* IntroScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IntroScene.m; path = Classes/IntroScene.m; sourceTree = "<group>"; };
-		4EF390B418E849BA00216078 /* NewtonConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NewtonConstants.h; path = Classes/NewtonConstants.h; sourceTree = "<group>"; };
-		4EF390B518E849BA00216078 /* NewtonScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NewtonScene.h; path = Classes/NewtonScene.h; sourceTree = "<group>"; };
-		4EF390B618E849BA00216078 /* NewtonScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NewtonScene.m; path = Classes/NewtonScene.m; sourceTree = "<group>"; };
-		4EF390B818E849BA00216078 /* NewtonSphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NewtonSphere.h; path = Classes/NewtonSphere.h; sourceTree = "<group>"; };
-		4EF390B918E849BA00216078 /* NewtonSphere.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NewtonSphere.m; path = Classes/NewtonSphere.m; sourceTree = "<group>"; };
-		4EF390BB18E849BA00216078 /* LightBulb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LightBulb.h; path = Classes/LightBulb.h; sourceTree = "<group>"; };
-		4EF390BC18E849BA00216078 /* LightBulb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LightBulb.m; path = Classes/LightBulb.m; sourceTree = "<group>"; };
-		4EF390BE18E849BA00216078 /* Rope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Rope.h; path = Classes/Rope.h; sourceTree = "<group>"; };
-		4EF390BF18E849BA00216078 /* Rope.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Rope.m; path = Classes/Rope.m; sourceTree = "<group>"; };
 		4EF390C118E849BA00216078 /* fire.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fire.plist; path = Resources/fire.plist; sourceTree = "<group>"; };
 		4EF390C318E849BA00216078 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fire.png; path = Resources/fire.png; sourceTree = "<group>"; };
-		4EF390C518E849BA00216078 /* newton-ipadhd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "newton-ipadhd.plist"; path = "Resources/newton-ipadhd.plist"; sourceTree = "<group>"; };
-		4EF390C718E849BA00216078 /* newton-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "newton-ipadhd.png"; path = "Resources/newton-ipadhd.png"; sourceTree = "<group>"; };
-		4EF390C918E849BA00216078 /* newton-ipad.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "newton-ipad.plist"; path = "Resources/newton-ipad.plist"; sourceTree = "<group>"; };
-		4EF390CB18E849BA00216078 /* newton-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "newton-ipad.png"; path = "Resources/newton-ipad.png"; sourceTree = "<group>"; };
-		4EF390CD18E849BA00216078 /* newton.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = newton.plist; path = Resources/newton.plist; sourceTree = "<group>"; };
-		4EF390CF18E849BA00216078 /* newton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newton.png; path = Resources/newton.png; sourceTree = "<group>"; };
+		4EF390D918E84DE000216078 /* PlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayScene.h; path = Classes/PlayScene.h; sourceTree = "<group>"; };
+		4EF390DA18E84DE000216078 /* PlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayScene.m; path = Classes/PlayScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -753,6 +780,29 @@
 		4EF38E1C18E849B800216078 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4ECF43C119030186005D4819 /* selected_tower_sprite.png */,
+				4EE145E918F07621009E17E7 /* tileMap.tmx */,
+				4ECF43BF1902FF16005D4819 /* tilea4.png */,
+				4EE145C318F07274009E17E7 /* air_1.png */,
+				4EE145C418F07274009E17E7 /* air_2.png */,
+				4EE145C518F07274009E17E7 /* air_3.png */,
+				4EE145C618F07274009E17E7 /* enemy_air_1.png */,
+				4EE145C718F07274009E17E7 /* enemy_air_2.png */,
+				4EE145C818F07274009E17E7 /* enemy_air_3.png */,
+				4EE145C918F07274009E17E7 /* enemy_air_4.png */,
+				4EE145CA18F07274009E17E7 /* enemy_land_1.png */,
+				4EE145CB18F07274009E17E7 /* enemy_land_2.png */,
+				4EE145CC18F07274009E17E7 /* enemy_land_3.png */,
+				4EE145CD18F07274009E17E7 /* enemy_land_4.png */,
+				4EE145CE18F07274009E17E7 /* fireball.gif */,
+				4EE145CF18F07274009E17E7 /* land_1.png */,
+				4EE145D018F07274009E17E7 /* land_2.png */,
+				4EE145D118F07274009E17E7 /* land_3.png */,
+				4EE145D218F07274009E17E7 /* land_4.png */,
+				4EE145D318F07274009E17E7 /* land_and_air_1.png */,
+				4EE145D418F07274009E17E7 /* land_and_air_2.png */,
+				4EE145D518F07274009E17E7 /* land_and_air_3.png */,
+				4EE145B818F06C5E009E17E7 /* tower_def_sprites.tps */,
 				4EF38E1D18E849B800216078 /* Default.png */,
 				4EF38E1F18E849B800216078 /* Default@2x.png */,
 				4EF38E2118E849B800216078 /* Default-568h@2x.png */,
@@ -762,12 +812,6 @@
 				4EF38E4318E849B800216078 /* iTunesArtwork@2x */,
 				4EF390C118E849BA00216078 /* fire.plist */,
 				4EF390C318E849BA00216078 /* fire.png */,
-				4EF390C518E849BA00216078 /* newton-ipadhd.plist */,
-				4EF390C718E849BA00216078 /* newton-ipadhd.png */,
-				4EF390C918E849BA00216078 /* newton-ipad.plist */,
-				4EF390CB18E849BA00216078 /* newton-ipad.png */,
-				4EF390CD18E849BA00216078 /* newton.plist */,
-				4EF390CF18E849BA00216078 /* newton.png */,
 				4EF38E2518E849B800216078 /* Icons */,
 			);
 			name = Resources;
@@ -1579,19 +1623,14 @@
 			children = (
 				4EF390AB18E849BA00216078 /* AppDelegate.h */,
 				4EF390AC18E849BA00216078 /* AppDelegate.m */,
-				4EF390AE18E849BA00216078 /* HelloWorldScene.h */,
-				4EF390AF18E849BA00216078 /* HelloWorldScene.m */,
 				4EF390B118E849BA00216078 /* IntroScene.h */,
 				4EF390B218E849BA00216078 /* IntroScene.m */,
-				4EF390B418E849BA00216078 /* NewtonConstants.h */,
-				4EF390B518E849BA00216078 /* NewtonScene.h */,
-				4EF390B618E849BA00216078 /* NewtonScene.m */,
-				4EF390B818E849BA00216078 /* NewtonSphere.h */,
-				4EF390B918E849BA00216078 /* NewtonSphere.m */,
-				4EF390BB18E849BA00216078 /* LightBulb.h */,
-				4EF390BC18E849BA00216078 /* LightBulb.m */,
-				4EF390BE18E849BA00216078 /* Rope.h */,
-				4EF390BF18E849BA00216078 /* Rope.m */,
+				4EF390D918E84DE000216078 /* PlayScene.h */,
+				4EF390DA18E84DE000216078 /* PlayScene.m */,
+				4EE145BD18F06D09009E17E7 /* Tower.h */,
+				4EE145BE18F06D09009E17E7 /* Tower.m */,
+				4EE145C018F06D6E009E17E7 /* Monster.h */,
+				4EE145C118F06D6E009E17E7 /* Monster.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1664,38 +1703,55 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ECF43C01902FF16005D4819 /* tilea4.png in Resources */,
 				4EF38E2018E849B800216078 /* Default@2x.png in Resources */,
 				4EF38E3318E849B800216078 /* Icon-120.png in Resources */,
 				4EF3903718E849BA00216078 /* LICENSE_CCBReader.txt in Resources */,
-				4EF390CA18E849BA00216078 /* newton-ipad.plist in Resources */,
-				4EF390C618E849BA00216078 /* newton-ipadhd.plist in Resources */,
 				4EF38E2918E849B800216078 /* Icon@2x.png in Resources */,
 				4EF38E3B18E849B800216078 /* Icon-Small@2x.png in Resources */,
-				4EF390CE18E849BA00216078 /* newton.plist in Resources */,
+				4EE145DF18F07274009E17E7 /* enemy_land_3.png in Resources */,
 				4EF38E2D18E849B800216078 /* Icon-72@2x.png in Resources */,
+				4EE145B918F06C5E009E17E7 /* tower_def_sprites.tps in Resources */,
 				4EF38E1E18E849B800216078 /* Default.png in Resources */,
+				4EE145D618F07274009E17E7 /* air_1.png in Resources */,
+				4ECF43C219030186005D4819 /* selected_tower_sprite.png in Resources */,
 				4EF38E2718E849B800216078 /* Icon.png in Resources */,
+				4EE145E518F07274009E17E7 /* land_4.png in Resources */,
 				4EF38E3518E849B800216078 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
+				4EE145D918F07274009E17E7 /* enemy_air_1.png in Resources */,
 				4EF38E2418E849B800216078 /* Default-Landscape~ipad.png in Resources */,
+				4EE145DC18F07274009E17E7 /* enemy_air_4.png in Resources */,
+				4EE145DB18F07274009E17E7 /* enemy_air_3.png in Resources */,
+				4EE145E218F07274009E17E7 /* land_1.png in Resources */,
 				4EF38E3918E849B800216078 /* Icon-Small.png in Resources */,
 				4EF38E3718E849B800216078 /* Icon-Small-50.png in Resources */,
+				4EE145DE18F07274009E17E7 /* enemy_land_2.png in Resources */,
+				4EE145E418F07274009E17E7 /* land_3.png in Resources */,
 				4EF390C218E849BA00216078 /* fire.plist in Resources */,
+				4EE145EA18F07621009E17E7 /* tileMap.tmx in Resources */,
 				4EF390C418E849BA00216078 /* fire.png in Resources */,
-				4EF390CC18E849BA00216078 /* newton-ipad.png in Resources */,
+				4EE145D818F07274009E17E7 /* air_3.png in Resources */,
 				4EF3902018E849BA00216078 /* LICENSE_Kazmath.txt in Resources */,
+				4EE145D718F07274009E17E7 /* air_2.png in Resources */,
 				4EF38E2B18E849B800216078 /* Icon-72.png in Resources */,
 				4EF38F7918E849B900216078 /* LICENSE_cocos2d.txt in Resources */,
-				4EF390C818E849BA00216078 /* newton-ipadhd.png in Resources */,
 				4EF38E2218E849B800216078 /* Default-568h@2x.png in Resources */,
 				4EF38E4218E849B800216078 /* iTunesArtwork in Resources */,
-				4EF390D018E849BA00216078 /* newton.png in Resources */,
 				4EF38E3D18E849B800216078 /* Icon-Spotlight-iOS7.png in Resources */,
 				4EF38E3118E849B800216078 /* Icon-76@2x.png in Resources */,
+				4EE145E818F07274009E17E7 /* land_and_air_3.png in Resources */,
 				4EF390A518E849BA00216078 /* LICENSE_Chipmunk.txt in Resources */,
 				4EF38E3F18E849B800216078 /* Icon-Spotlight-iOS7@2x.png in Resources */,
+				4EE145E118F07274009E17E7 /* fireball.gif in Resources */,
+				4EE145DD18F07274009E17E7 /* enemy_land_1.png in Resources */,
+				4EE145E718F07274009E17E7 /* land_and_air_2.png in Resources */,
 				4EF38E2F18E849B800216078 /* Icon-76.png in Resources */,
 				4EF3900518E849BA00216078 /* ChangeLog in Resources */,
 				4EF38E4418E849B800216078 /* iTunesArtwork@2x in Resources */,
+				4EE145E018F07274009E17E7 /* enemy_land_4.png in Resources */,
+				4EE145DA18F07274009E17E7 /* enemy_air_2.png in Resources */,
+				4EE145E618F07274009E17E7 /* land_and_air_1.png in Resources */,
+				4EE145E318F07274009E17E7 /* land_2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1725,6 +1781,7 @@
 				4EF38F0418E849B900216078 /* CCSpriteFrame.m in Sources */,
 				4EF38E9818E849B800216078 /* CCNodeColor.m in Sources */,
 				4EF38F7118E849B900216078 /* TransformUtils.m in Sources */,
+				4EF390DB18E84DE000216078 /* PlayScene.m in Sources */,
 				4EF38F1218E849B900216078 /* CCTextureCache.m in Sources */,
 				4EF38F3D18E849B900216078 /* CCAppDelegate.m in Sources */,
 				4EF38F4118E849B900216078 /* CCDirectorMac.m in Sources */,
@@ -1772,7 +1829,6 @@
 				4EF38F8C18E849B900216078 /* OALAudioTrack.m in Sources */,
 				4EF38ECF18E849B900216078 /* CCProgressNode.m in Sources */,
 				4EF38EC218E849B900216078 /* CCPhysicsBody.m in Sources */,
-				4EF390BD18E849BA00216078 /* LightBulb.m in Sources */,
 				4EF38F4718E849B900216078 /* CCWindow.m in Sources */,
 				4EF38E5C18E849B800216078 /* CCActionProgressTimer.m in Sources */,
 				4EF3901218E849BA00216078 /* plane.c in Sources */,
@@ -1782,18 +1838,15 @@
 				4EF38FBC18E849B900216078 /* OALAudioSession.m in Sources */,
 				4EF3903318E849BA00216078 /* CCBLocalizationManager.m in Sources */,
 				4EF38F1F18E849B900216078 /* CCTiledMapObjectGroup.m in Sources */,
-				4EF390BA18E849BA00216078 /* NewtonSphere.m in Sources */,
 				4EF3901C18E849BA00216078 /* vec3.c in Sources */,
 				4EF38E9F18E849B800216078 /* CCLayoutBox.m in Sources */,
 				4EF38E9C18E849B800216078 /* CCLayout.m in Sources */,
 				4EF38FBF18E849B900216078 /* OALSuspendHandler.m in Sources */,
 				4EF3901E18E849BA00216078 /* vec4.c in Sources */,
 				4EF38F3018E849B900216078 /* CCDirectorIOS.m in Sources */,
-				4EF390B718E849BA00216078 /* NewtonScene.m in Sources */,
 				4EF38F0718E849B900216078 /* CCSpriteFrameCache.m in Sources */,
 				4EF38FC618E849BA00216078 /* mach_timing.c in Sources */,
 				4EF38FAA18E849B900216078 /* ALListener.m in Sources */,
-				4EF390C018E849BA00216078 /* Rope.m in Sources */,
 				4EF38E8318E849B800216078 /* ccFPSImages.m in Sources */,
 				4EF38F5A18E849B900216078 /* ccUtils.c in Sources */,
 				4EF38ECB18E849B900216078 /* CCPhysicsShape.m in Sources */,
@@ -1805,7 +1858,6 @@
 				4EF38EF618E849B900216078 /* ccShaders.m in Sources */,
 				4EF3900A18E849BA00216078 /* matrix.c in Sources */,
 				4EF38F1C18E849B900216078 /* CCTiledMapLayer.m in Sources */,
-				4EF390B018E849BA00216078 /* HelloWorldScene.m in Sources */,
 				4EF3901018E849BA00216078 /* neon_matrix_impl.c in Sources */,
 				4EF38E9518E849B800216078 /* CCLabelTTF.m in Sources */,
 				4EF38F4A18E849B900216078 /* NSEvent+CC.m in Sources */,
@@ -1826,6 +1878,7 @@
 				4EF38F6518E849B900216078 /* NSAttributedString+CCAdditions.m in Sources */,
 				4EF3902718E849BA00216078 /* CCBKeyframe.m in Sources */,
 				4EF38FE118E849BA00216078 /* CCControlTextureFactory.m in Sources */,
+				4EE145C218F06D6E009E17E7 /* Monster.m in Sources */,
 				4EF38E6618E849B800216078 /* CCAnimationCache.m in Sources */,
 				4EF38FEA18E849BA00216078 /* CCTableView.m in Sources */,
 				4EF390AD18E849BA00216078 /* AppDelegate.m in Sources */,
@@ -1838,6 +1891,7 @@
 				4EF38F3318E849B900216078 /* CCES2Renderer.m in Sources */,
 				4EF3900318E849BA00216078 /* aabb.c in Sources */,
 				4EF3902D18E849BA00216078 /* CCBsequence.m in Sources */,
+				4EE145BF18F06D09009E17E7 /* Tower.m in Sources */,
 				4EF38E8E18E849B800216078 /* CCLabelAtlas.m in Sources */,
 				4EF38F2918E849B900216078 /* cocos2d.m in Sources */,
 				4EF38FB118E849B900216078 /* ALSource.m in Sources */,
@@ -2047,6 +2101,7 @@
 				4EF390D518E849BA00216078 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4EF390D618E849BA00216078 /* Build configuration list for PBXNativeTarget "Tower Defense" */ = {
 			isa = XCConfigurationList;
@@ -2055,6 +2110,7 @@
 				4EF390D818E849BA00216078 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

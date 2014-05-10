@@ -9,8 +9,7 @@
 
 // Import the interfaces
 #import "IntroScene.h"
-#import "HelloWorldScene.h"
-#import "NewtonScene.h"
+#import "PlayScene.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - IntroScene
@@ -40,25 +39,24 @@
     [self addChild:background];
     
     // Hello world
-    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Chalkduster" fontSize:36.0f];
+    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Tower Defense" fontName:@"Zapfino" fontSize:36.0f];
     label.positionType = CCPositionTypeNormalized;
     label.color = [CCColor redColor];
     label.position = ccp(0.5f, 0.5f); // Middle of screen
     [self addChild:label];
     
     // Spinning scene button
-    CCButton *spinningButton = [CCButton buttonWithTitle:@"[ Simple Sprite ]" fontName:@"Verdana-Bold" fontSize:18.0f];
-    spinningButton.positionType = CCPositionTypeNormalized;
-    spinningButton.position = ccp(0.5f, 0.35f);
-    [spinningButton setTarget:self selector:@selector(onSpinningClicked:)];
-    [self addChild:spinningButton];
-
-    // Next scene button
-    CCButton *newtonButton = [CCButton buttonWithTitle:@"[ Newton Physics ]" fontName:@"Verdana-Bold" fontSize:18.0f];
-    newtonButton.positionType = CCPositionTypeNormalized;
-    newtonButton.position = ccp(0.5f, 0.20f);
-    [newtonButton setTarget:self selector:@selector(onNewtonClicked:)];
-    [self addChild:newtonButton];
+    CCButton *playButton = [CCButton buttonWithTitle:@"Play" fontName:@"Verdana-Bold" fontSize:18.0f];
+    playButton.positionType = CCPositionTypeNormalized;
+    playButton.position = ccp(0.5f, 0.25f);
+    [playButton setTarget:self selector:@selector(onPlayClicked:)];
+    [self addChild:playButton];
+    
+    // Spinning scene button
+    CCButton *recordsButton = [CCButton buttonWithTitle:@"Records" fontName:@"Verdana-Bold" fontSize:18.0f];
+    recordsButton.positionType = CCPositionTypeNormalized;
+    recordsButton.position = ccp(0.5f, 0.15f);
+    [self addChild:recordsButton];
 	
     // done
 	return self;
@@ -68,19 +66,11 @@
 #pragma mark - Button Callbacks
 // -----------------------------------------------------------------------
 
-- (void)onSpinningClicked:(id)sender
+- (void)onPlayClicked:(id)sender
 {
     // start spinning scene with transition
-    [[CCDirector sharedDirector] replaceScene:[HelloWorldScene scene]
-                               withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:1.0f]];
-}
-
-- (void)onNewtonClicked:(id)sender
-{
-    // start newton scene with transition
-    // the current scene is pushed, and thus needs popping to be brought back. This is done in the newton scene, when pressing back (upper left corner)
-    [[CCDirector sharedDirector] pushScene:[NewtonScene scene]
-                            withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:1.0f]];
+    [[CCDirector sharedDirector] replaceScene:[PlayScene scene]
+                               withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionUp duration:0.2f]];
 }
 
 // -----------------------------------------------------------------------
