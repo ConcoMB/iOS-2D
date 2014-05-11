@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E4AF93C192021B8007D10C0 /* Fire.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AF93B192021B8007D10C0 /* Fire.m */; };
 		4ECF43C01902FF16005D4819 /* tilea4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF43BF1902FF16005D4819 /* tilea4.png */; };
 		4ECF43C219030186005D4819 /* selected_tower_sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF43C119030186005D4819 /* selected_tower_sprite.png */; };
 		4EE145B918F06C5E009E17E7 /* tower_def_sprites.tps in Resources */ = {isa = PBXBuildFile; fileRef = 4EE145B818F06C5E009E17E7 /* tower_def_sprites.tps */; };
@@ -252,6 +253,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E4AF93A192021B8007D10C0 /* Fire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fire.h; path = Classes/Fire.h; sourceTree = "<group>"; };
+		4E4AF93B192021B8007D10C0 /* Fire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Fire.m; path = Classes/Fire.m; sourceTree = "<group>"; };
 		4ECF43BF1902FF16005D4819 /* tilea4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tilea4.png; path = Resources/tilea4.png; sourceTree = "<group>"; };
 		4ECF43C119030186005D4819 /* selected_tower_sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = selected_tower_sprite.png; path = Resources/selected_tower_sprite.png; sourceTree = "<group>"; };
 		4EE145B818F06C5E009E17E7 /* tower_def_sprites.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tower_def_sprites.tps; path = Resources/tower_def_sprites.tps; sourceTree = "<group>"; };
@@ -1631,6 +1634,8 @@
 				4EE145BE18F06D09009E17E7 /* Tower.m */,
 				4EE145C018F06D6E009E17E7 /* Monster.h */,
 				4EE145C118F06D6E009E17E7 /* Monster.m */,
+				4E4AF93A192021B8007D10C0 /* Fire.h */,
+				4E4AF93B192021B8007D10C0 /* Fire.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1866,6 +1871,7 @@
 				4EF38E4A18E849B800216078 /* CCAction.m in Sources */,
 				4EF38EAE18E849B900216078 /* CCParallaxNode.m in Sources */,
 				4EF3901618E849BA00216078 /* ray2.c in Sources */,
+				4E4AF93C192021B8007D10C0 /* Fire.m in Sources */,
 				4EF38F9218E849B900216078 /* OALAudioTracks.m in Sources */,
 				4EF38F8F18E849B900216078 /* OALAudioTrackNotifications.m in Sources */,
 				4EF3901418E849BA00216078 /* quaternion.c in Sources */,

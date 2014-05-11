@@ -30,10 +30,12 @@
     
     _isEditMode = true;
     _level = 1;
-    _gold = 150;
+    _gold = 50;
     _towers = [NSMutableArray array];
+    _monsters = [NSMutableArray array];
     _occupiedTiles = [NSMutableSet set];
     _selectedTowerSprite = [CCSprite spriteWithImageNamed:@"selected_tower_sprite.png"];
+    [_selectedTowerSprite setPosition:CGPointMake(-1, -1)];
     [self addChild:_selectedTowerSprite];
     
     CCLabelTTF * goldTxtLabel = [CCLabelTTF labelWithString:@"Gold: " fontName:@"Arial" fontSize:15];
@@ -41,6 +43,8 @@
     goldTxtLabel.color = [CCColor whiteColor];
     goldTxtLabel.position = ccp(0.12f, 0.05f);
     [self addChild:goldTxtLabel];
+    
+    _fireTiming = 0.0;
     
     CCLabelTTF * levelTxtLabel = [CCLabelTTF labelWithString:@"Level: " fontName:@"Arial" fontSize:15];
     levelTxtLabel.positionType = CCPositionTypeNormalized;
@@ -74,6 +78,7 @@
     
     _background = [_tiledMap layerNamed:@"Background"];
     _objectGroup = [_tiledMap objectGroupNamed:@"Objects"];
+    _roadGroup = [_tiledMap objectGroupNamed:@"Road"];
     _tileSize = [_tiledMap tileSize];
     
     _attackButton = [CCButton buttonWithTitle:@"ATTACK"];
@@ -93,43 +98,105 @@
     [self setUpTowerButtons];
     [self calculateRoadTiles];
     
+    _physicsWorld = [CCPhysicsNode node];
+    _physicsWorld.gravity = ccp(0,0);
+    _physicsWorld.debugDraw = NO;
+    _physicsWorld.collisionDelegate = self;
+    [self addChild:_physicsWorld];
+    
 	return self;
 }
 
-- (void) calculateRoadTiles {
-    NSMutableDictionary *point = [_objectGroup objectNamed:@"spawn"];
-    int x = [[point valueForKey:@"x"] integerValue];
-    int y = [[point valueForKey:@"y"] integerValue];
-    [_occupiedTiles addObject:[NSValue valueWithCGPoint:CGPointMake(x, y)]];
-    while ([point objectForKey:@"next_y"]) {
-        int x = [[point valueForKey:@"next_x"] integerValue];
-        int y = [[point valueForKey:@"next_y"] integerValue];
-        [_occupiedTiles addObject:[NSValue valueWithCGPoint:CGPointMake(y, x)]];
-        point = [_objectGroup objectNamed: [NSString stringWithFormat:@"road_%i_%i", x, y]];
+- (void) calculateRoadTiles
+{
+    NSMutableDictionary *point = [_roadGroup objectNamed:@"spawn"];
+    _spawnPoint_x = (int)[[point valueForKey:@"x"] integerValue];
+    _spawnPoint_y = (int)[[point valueForKey:@"y"] integerValue];
+    [_occupiedTiles addObject:[NSValue valueWithCGPoint:[self getTilePointOnX: _spawnPoint_x andY: _spawnPoint_y]]];
+    
+    for (int i = 1; i < 42; i++) {
+        NSMutableDictionary *point = [_roadGroup objectNamed:[NSString stringWithFormat:@"%i", i]];
+        NSInteger x = [[point valueForKey:@"x"] integerValue];
+        NSInteger y = [[point valueForKey:@"y"] integerValue];
+        [_occupiedTiles addObject:[NSValue valueWithCGPoint:[self getTilePointOnX: (int)x andY: (int)y]]];
     }
+    for (int i = 0; i < 10; i++) {
+        [_occupiedTiles addObject:[NSValue valueWithCGPoint:CGPointMake(0, i)]];
+    }
+    
+    for (int j = 0; j < 15; j++) {
+        [_occupiedTiles addObject:[NSValue valueWithCGPoint:CGPointMake(j, 9)]];
+    }
+}
+
+- (CGPoint) getTilePointOnX: (int)x andY: (int)y
+{
+    int tx = x / _tileSize.width;
+    int ty = 10 - y / _tileSize.height;
+    return CGPointMake(tx, ty);
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     // 1
     if (_isEditMode && _selectedTower != NULL && _gold >= _selectedTowerPrice)
     {
-        _gold -= _selectedTowerPrice;
-        [_goldLabel setString: [@(_gold) stringValue]];
         CGPoint touchLocation = [touch locationInNode:self];
-        int x = touchLocation.x / _tileSize.width;
-        int y = 10 - touchLocation.y / _tileSize.height;
 
-        CGPoint tilePoint = CGPointMake(x, y);
+        CGPoint tilePoint = [self getTilePointOnX:touchLocation.x andY: touchLocation.y];
         if ([_occupiedTiles containsObject:[NSValue valueWithCGPoint:tilePoint]]) {
             return;
         }
+        _gold -= _selectedTowerPrice;
+        [_goldLabel setString: [@(_gold) stringValue]];
         CCSprite * touchedTile = [_background tileAt:tilePoint];
         Tower * newTower = [Tower initTower:_selectedTower.name];
 //        CCSprite * newTower = [CCSprite spriteWithImageNamed:_selectedTower.name];
-        [newTower setPosition:CGPointMake(touchedTile.position.x + _tileSize.height / 2, touchedTile.position.y + _tileSize.width / 2)];
+        [newTower setPosition:CGPointMake(touchedTile.position.x, touchedTile.position.y)];
         [_towers addObject: newTower];
         [_occupiedTiles addObject: [NSValue valueWithCGPoint:tilePoint]];
         [self addChild:newTower];
+    }
+}
+
+- (void) monsterArrivedToEnd
+{
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"You lost!" message:@"The pokemons ate your soul" delegate: self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
+    [[CCDirector sharedDirector] pause];
+    [[CCDirector sharedDirector] replaceScene:[IntroScene scene]
+                               withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown duration:0.2f]];
+}
+
+- (void) update:(CCTime)delta {
+    if (_isEditMode == NO) {
+        _fireTiming += delta;
+        
+        if ( _fireTiming >= 1.0f ) {
+            _fireTiming -= 1.0f;
+            
+            for (Tower * t in _towers) {
+                int minDistance = INFINITY;
+                Monster * minDistanceMonster;
+                for (Monster * m in _monsters) {
+                    if ([t canHitMonster: m]) {
+                        int d = ccpDistance(t.position, m.position);
+                        if (d < 100 && d < minDistance){
+                            minDistance = d;
+                            minDistanceMonster = m;
+                        }
+                    }
+                }
+                if (minDistanceMonster != nil) {
+                    Fire * fire = [Fire initFireWithDamage: t.level];
+                    [fire setPosition: CGPointMake(t.position.x + _tileSize.height /2, t.position.y + _tileSize.width / 2)];
+                    [_physicsWorld addChild:fire];
+                    
+                    CCActionMoveTo *actionMove   = [CCActionMoveTo actionWithDuration:0.2f position:minDistanceMonster.position];
+                    CCActionRemove *actionRemove = [CCActionRemove action];
+                    [fire runAction:[CCActionSequence actionWithArray:@[actionMove,actionRemove]]];
+                }
+            }
+        }
     }
 }
 
@@ -152,17 +219,12 @@
     CCButton * towerButton =  [CCButton buttonWithTitle: @"" spriteFrame:image];
     NSMutableDictionary * tower = [_objectGroup objectNamed: object];
     towerButton.name = sprite;
-    int x = [[tower valueForKey:@"x"] integerValue];
-    int y = [[tower valueForKey:@"y"] integerValue];
+    int x = (int)[[tower valueForKey:@"x"] integerValue];
+    int y = (int)[[tower valueForKey:@"y"] integerValue];
     [towerButton setPosition:CGPointMake(x + _tileSize.width / 2, y + _tileSize.height / 2)];
     [towerButton setTarget:self selector:@selector(onTowerButtonClicked:)];
     [self addChild:towerButton];
 }
-
-
-// -----------------------------------------------------------------------
-#pragma mark - Button Callbacks
-// -----------------------------------------------------------------------
 
 - (void)onTowerButtonClicked:(id)sender
 {
@@ -178,20 +240,134 @@
 
 - (void)onAttackButtonClicked:(id)sender
 {
-    _isEditMode = false;
-    Monster * monster = [Monster initMonsterWithLevel: 1 andFlies: NO];
-    [monster setPosition: CGPointMake(_spawnPoint_x, _spawnPoint_y)];
+    if (_isEditMode)
+    {
+        _isEditMode = false;
+        [self setMonstersForLevel:_level];
+        int i = 0;
+        for (Monster * monster in _monsters) {
+            [monster scheduleOnce: @selector(spawn) delay:i];
+            i++;
+        }
+    }
 }
 
-- (void) updateGoldLabel
-{
-    [self.goldLabel setString: [NSString stringWithFormat:@"%i", self.gold]];
+- (void) levelUp {
+    _isEditMode = YES;
+    _level++;
+    if (_level == 11) {
+        _levelLabel.string = [NSString stringWithFormat:@"%i", _level];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"You won the game!" message:@"You caught them all" delegate: self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    } else {
+        _levelLabel.string = [NSString stringWithFormat:@"%i", _level];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Vicotry!" message:@"Gotta catch'em all" delegate: self cancelButtonTitle:nil otherButtonTitles: @"Great", nil];
+        [alert show];
+
+    }
 }
 
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if ([alertView.title isEqualToString:@"You won the game!"]) {
+        [[CCDirector sharedDirector] replaceScene:[IntroScene scene] withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown duration:0.2f]];
+    }
+}
 
-- (void) updateLevelLabel
-{
-    [self.levelLabel setString: [NSString stringWithFormat:@"%i", self.level]];
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair fireCollision:(Fire *)fire monsterCollision:(Monster *)monster {
+    if ([monster harm: fire.damage]) {
+        [_monsters removeObject:monster];
+        [monster removeFromParent];
+        _gold = _gold += monster.gold;
+        _goldLabel.string = [NSString stringWithFormat:@"%i", _gold];
+        if ([_monsters firstObject] == NULL) {
+            [self levelUp];
+        }
+    }
+    [fire removeFromParent];
+    return YES;
+}
+
+- (void) setMonstersForLevel: (int) level {
+    if (level == 1) {
+        for (int i = 0; i < 5; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 1 andFlies: NO inGame:self];
+            [_monsters addObject:monster];
+        }
+    } else if (level == 2){
+        for (int i = 0; i < 3; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 1 andFlies: NO inGame:self];
+            [_monsters addObject:monster];
+        }
+        for (int i = 0; i < 3; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 1 andFlies: YES inGame:self];
+            [_monsters addObject:monster];
+        }
+    } else if (level == 3){
+        for (int i = 0; i < 5; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 2 andFlies: NO inGame:self];
+            [_monsters addObject:monster];
+        }
+    } else if (level == 4){
+        for (int i = 0; i < 3; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 2 andFlies: NO inGame:self];
+            [_monsters addObject:monster];
+        }
+        for (int i = 0; i < 3; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 2 andFlies: YES inGame:self];
+            [_monsters addObject:monster];
+        }
+    } else if (level == 5){
+        for (int i = 0; i < 5; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 3 andFlies: NO inGame:self];
+            [_monsters addObject:monster];
+        }
+    } else if (level == 6){
+        for (int i = 0; i < 3; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 3 andFlies: NO inGame:self];
+            [_monsters addObject:monster];
+        }
+        for (int i = 0; i < 3; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 3 andFlies: YES inGame:self];
+            [_monsters addObject:monster];
+        }
+    } else if (level == 7){
+        for (int i = 0; i < 3; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 3 andFlies: NO inGame:self];
+            [_monsters addObject:monster];
+        }
+        for (int i = 0; i < 3; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 3 andFlies: YES inGame:self];
+            [_monsters addObject:monster];
+        }
+        for (int i = 0; i < 3; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 3 andFlies: NO inGame:self];
+            [_monsters addObject:monster];
+        }
+        for (int i = 0; i < 3; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 3 andFlies: YES inGame:self];
+            [_monsters addObject:monster];
+        }
+    } else if (level == 8){
+        for (int i = 0; i < 5; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 4 andFlies: NO inGame:self];
+            [_monsters addObject:monster];
+        }
+        
+    } else if (level == 9){
+        for (int i = 0; i < 5; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 4 andFlies: NO inGame:self];
+            [_monsters addObject:monster];
+        }
+        for (int i = 0; i < 5; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 4 andFlies: YES inGame:self];
+            [_monsters addObject:monster];
+        }
+    } else if (level == 10){
+        for (int i = 0; i < 10; i++) {
+            Monster * monster = [Monster initMonsterWithLevel: 4 andFlies: i % 2 == 0 inGame:self];
+            [_monsters addObject:monster];
+        }
+    }
 }
 
 @end

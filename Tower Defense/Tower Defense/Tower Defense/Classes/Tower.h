@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CCSprite.h"
+#import "Monster.h"
 
 @interface Tower : CCSprite
 
@@ -17,7 +18,8 @@
 @property(atomic, readwrite) int price;
 @property(atomic, readwrite) int damage;
 
-+ (id)initTower: (NSString*) name;
-+ (id)initTowerWithName: (NSString*)name level: (int)level hitsLand:(BOOL)land hitsAir:(BOOL)air;
++ (id) initTower: (NSString*) name;
++ (id) initTowerWithName: (NSString*)name level: (int)level hitsLand:(BOOL)land hitsAir:(BOOL)air;
+- (BOOL) canHitMonster:(id) monster;
 
 @end

@@ -43,34 +43,47 @@
     tower.hitsLand = land;
     tower.level = level;
     tower.damage = level;
+    
+    [tower setAnchorPoint:CGPointMake(0, 0)];
     if (tower.hitsLand && !tower.hitsAir) {
         if (tower.level == 1) {
             tower.price = 10;
         } else if (tower.level == 2) {
-            tower.price = 30;
+            tower.price = 25;
         } else if (tower.level == 3) {
-            tower.price = 75;
+            tower.price = 55;
         } else if (tower.level == 4) {
-            tower.price = 150;
+            tower.price = 120;
         }
     } else if (!tower.hitsLand && tower.hitsAir) {
         if (tower.level == 1) {
-            tower.price = 25;
+            tower.price = 15;
         } else if (tower.level == 2) {
-            tower.price = 60;
+            tower.price = 40;
         } else if (tower.level == 3) {
-            tower.price = 125;
+            tower.price = 90;
         }
     } else {
         if (tower.level == 1) {
-            tower.price = 50;
+            tower.price = 30;
         } else if (tower.level == 2) {
-            tower.price = 110;
+            tower.price = 70;
         } else if (tower.level == 3) {
-            tower.price = 250;
+            tower.price = 150;
         }
     }
     return tower;
+}
+
+- (BOOL) canHitMonster: (Monster *) monster
+{
+    if (_hitsLand && !monster.flies) {
+        return YES;
+    }
+    if (_hitsAir && monster.flies) {
+        return YES;
+    }
+    return NO;
 }
 
 @end

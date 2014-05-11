@@ -19,109 +19,54 @@
   <object name="land_and_air_1" x="0" y="225" width="29" height="27"/>
   <object name="land_and_air_2" x="0" y="258" width="28" height="26"/>
   <object name="land_and_air_3" x="1" y="290" width="27" height="25"/>
-  <object name="spawn" x="34" y="34" width="30" height="28">
+ </objectgroup>
+ <objectgroup name="Road" width="15" height="10">
+  <object name="1" x="66" y="34" width="29" height="28"/>
+  <object name="2" x="98" y="35" width="28" height="27"/>
+  <object name="3" x="129" y="36" width="30" height="26"/>
+  <object name="4" x="161" y="35" width="29" height="27"/>
+  <object name="5" x="192" y="35" width="29" height="26"/>
+  <object name="6" x="224" y="34" width="31" height="26"/>
+  <object name="7" x="259" y="36" width="29" height="27"/>
+  <object name="8" x="288" y="34" width="31" height="28"/>
+  <object name="9" x="322" y="33" width="29" height="29"/>
+  <object name="10" x="354" y="36" width="29" height="26"/>
+  <object name="11" x="383" y="35" width="31" height="27"/>
+  <object name="12" x="417" y="36" width="30" height="25"/>
+  <object name="13" x="418" y="64" width="29" height="31"/>
+  <object name="14" x="417" y="98" width="30" height="30"/>
+  <object name="15" x="417" y="130" width="28" height="27"/>
+  <object name="16" x="384" y="131" width="31" height="27"/>
+  <object name="17" x="353" y="130" width="30" height="28"/>
+  <object name="18" x="320" y="131" width="30" height="27"/>
+  <object name="19" x="288" y="130" width="29" height="27"/>
+  <object name="20" x="257" y="130" width="29" height="27"/>
+  <object name="21" x="224" y="129" width="31" height="29"/>
+  <object name="22" x="194" y="131" width="28" height="27"/>
+  <object name="23" x="160" y="130" width="30" height="28"/>
+  <object name="24" x="129" y="130" width="29" height="27"/>
+  <object name="25" x="97" y="130" width="29" height="27"/>
+  <object name="26" x="64" y="131" width="30" height="27"/>
+  <object name="27" x="65" y="162" width="30" height="28"/>
+  <object name="28" x="65" y="195" width="28" height="26"/>
+  <object name="29" x="64" y="226" width="30" height="28"/>
+  <object name="30" x="96" y="227" width="31" height="29"/>
+  <object name="31" x="128" y="227" width="29" height="27"/>
+  <object name="32" x="160" y="225" width="30" height="28"/>
+  <object name="33" x="194" y="225" width="27" height="28"/>
+  <object name="34" x="224" y="227" width="29" height="27"/>
+  <object name="35" x="256" y="226" width="30" height="27"/>
+  <object name="36" x="289" y="225" width="29" height="28"/>
+  <object name="37" x="321" y="227" width="29" height="26"/>
+  <object name="38" x="354" y="228" width="28" height="24"/>
+  <object name="39" x="385" y="227" width="28" height="27"/>
+  <object name="40" x="417" y="227" width="29" height="26"/>
+  <object name="41" x="449" y="226" width="30" height="25"/>
+  <object name="42" x="480" y="227" width="28" height="24">
    <properties>
-    <property name="next_x" value="1"/>
-    <property name="next_y" value="2"/>
-    <property name="x" value="1"/>
-    <property name="y" value="1"/>
+    <property name="end" value="true"/>
    </properties>
   </object>
-  <object name="road_1_2" x="68" y="38" width="26" height="24">
-   <properties>
-    <property name="next_x" value="1"/>
-    <property name="next_y" value="3"/>
-   </properties>
-  </object>
-  <object name="road_1_3" x="110" y="47">
-   <properties>
-    <property name="next_x" value="1"/>
-    <property name="next_y" value="4"/>
-   </properties>
-  </object>
-  <object name="road_1_4" x="141" y="49">
-   <properties>
-    <property name="next_x" value="1"/>
-    <property name="next_y" value="5"/>
-   </properties>
-  </object>
-  <object name="road_1_5" x="171" y="48">
-   <properties>
-    <property name="next_x" value="1"/>
-    <property name="next_y" value="6"/>
-   </properties>
-  </object>
-  <object name="road_1_6" x="212" y="45">
-   <properties>
-    <property name="next_x" value="1"/>
-    <property name="next_y" value="7"/>
-   </properties>
-  </object>
-  <object name="road_1_7" x="236" y="48">
-   <properties>
-    <property name="next_x" value="1"/>
-    <property name="next_y" value="8"/>
-   </properties>
-  </object>
-  <object name="road_1_8" x="271" y="48">
-   <properties>
-    <property name="next_x" value="1"/>
-    <property name="next_y" value="9"/>
-   </properties>
-  </object>
-  <object name="road_1_9" x="299" y="47">
-   <properties>
-    <property name="next_x" value="1"/>
-    <property name="next_y" value="10"/>
-   </properties>
-  </object>
-  <object name="road_1_10" x="335" y="51">
-   <properties>
-    <property name="next_x" value="1"/>
-    <property name="next_y" value="11"/>
-   </properties>
-  </object>
-  <object name="road_1_11" x="361" y="48">
-   <properties>
-    <property name="next_x" value="1"/>
-    <property name="next_y" value="12"/>
-   </properties>
-  </object>
-  <object name="road_1_12" x="399" y="46">
-   <properties>
-    <property name="next_x" value="1"/>
-    <property name="next_y" value="13"/>
-   </properties>
-  </object>
-  <object name="road_1_13" x="432" y="45"/>
-  <object x="432" y="82"/>
-  <object x="432" y="111"/>
-  <object x="434" y="146"/>
-  <object x="396" y="148"/>
-  <object x="371" y="147"/>
-  <object x="333" y="143"/>
-  <object x="306" y="142"/>
-  <object x="271" y="148"/>
-  <object x="240" y="143"/>
-  <object x="206" y="148"/>
-  <object x="171" y="143"/>
-  <object x="143" y="143"/>
-  <object x="114" y="144"/>
-  <object x="79" y="147"/>
-  <object x="84" y="178"/>
-  <object x="81" y="206"/>
-  <object x="80" y="237"/>
-  <object x="111" y="238"/>
-  <object x="143" y="241"/>
-  <object x="177" y="240"/>
-  <object x="209" y="241"/>
-  <object x="241" y="239"/>
-  <object x="269" y="238"/>
-  <object x="302" y="239"/>
-  <object x="331" y="241"/>
-  <object x="372" y="240"/>
-  <object x="400" y="240"/>
-  <object x="432" y="240"/>
-  <object x="464" y="238"/>
+  <object name="spawn" x="34" y="35" width="29" height="28"/>
  </objectgroup>
 </map>

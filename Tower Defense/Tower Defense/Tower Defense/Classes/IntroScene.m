@@ -52,11 +52,11 @@
     [playButton setTarget:self selector:@selector(onPlayClicked:)];
     [self addChild:playButton];
     
-    // Spinning scene button
-    CCButton *recordsButton = [CCButton buttonWithTitle:@"Records" fontName:@"Verdana-Bold" fontSize:18.0f];
-    recordsButton.positionType = CCPositionTypeNormalized;
-    recordsButton.position = ccp(0.5f, 0.15f);
-    [self addChild:recordsButton];
+//    // Spinning scene button
+//    CCButton *recordsButton = [CCButton buttonWithTitle:@"Records" fontName:@"Verdana-Bold" fontSize:18.0f];
+//    recordsButton.positionType = CCPositionTypeNormalized;
+//    recordsButton.position = ccp(0.5f, 0.15f);
+//    [self addChild:recordsButton];
 	
     // done
 	return self;
