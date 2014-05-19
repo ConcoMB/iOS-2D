@@ -14,7 +14,8 @@
 {
     Monster * monster = [super spriteWithImageNamed: [self calculateMonsterSpriteNameBasedOnLevel: level andFlies: flies ]];
     monster.flies = flies;
-    monster.HP = level * 5;
+    monster.max_HP = level * 5;
+    monster.HP = monster.max_HP;
     monster.level = level;
     monster.tilePosition = 1;
     monster.gold = level * 10 + arc4random() % level;
@@ -25,6 +26,8 @@
     monster.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, monster.contentSize} cornerRadius:0];
     monster.physicsBody.collisionGroup = @"monsterGroup";
     monster.physicsBody.collisionType  = @"monsterCollision";
+    
+    [monster initLifeBar];
     return monster;
 }
 
@@ -60,8 +63,24 @@
     return NULL;
 }
 
+- (void) initLifeBar
+{
+    _lifeBar = [CCSprite spriteWithImageNamed:@"life.png"];
+    _lifeBar.position = ccp(0,0);
+    _lifeBar.anchorPoint = ccp(0.0,0.5);
+    _lifeBar.scaleY = 1;
+    [self addChild:_lifeBar];
+    [self resizeLifeBar];
+}
+
+- (void) resizeLifeBar
+{
+    _lifeBar.scaleX = 10 * _HP / _max_HP;
+}
+
 - (BOOL) harm: (int) damage {
     _HP -= damage;
+    [self resizeLifeBar];
     return _HP <= 0;
 }
 

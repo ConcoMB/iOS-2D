@@ -34,14 +34,21 @@
     self = [super init];
     if (!self) return(nil);
     
-    // Create a colored background (Dark Grey)
-    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
-    [self addChild:background];
+    CCSprite *background = [CCSprite spriteWithImageNamed:@"welcome.png"];
+    [background setScale:0.5];
+    [background setAnchorPoint:CGPointMake(0, 0)];
+    [background setPosition:CGPointMake(0, 0)];
+    [self addChild:background z:0];
     
     // Hello world
+    CCLabelTTF *pokemon = [CCLabelTTF labelWithString:@"Pokemon" fontName:@"Zapfino" fontSize:36.0f];
+    pokemon.positionType = CCPositionTypeNormalized;
+    pokemon.color = [CCColor yellowColor];
+    pokemon.position = ccp(0.5f, 0.8f); // Middle of screen
+    [self addChild:pokemon];
     CCLabelTTF *label = [CCLabelTTF labelWithString:@"Tower Defense" fontName:@"Zapfino" fontSize:36.0f];
     label.positionType = CCPositionTypeNormalized;
-    label.color = [CCColor redColor];
+    label.color = [CCColor yellowColor];
     label.position = ccp(0.5f, 0.5f); // Middle of screen
     [self addChild:label];
     
@@ -51,6 +58,15 @@
     playButton.position = ccp(0.5f, 0.25f);
     [playButton setTarget:self selector:@selector(onPlayClicked:)];
     [self addChild:playButton];
+    
+    CCParticleFire * fire = [[CCParticleFire alloc] init];
+    fire.positionType = CCPositionTypeNormalized;
+    [fire setPosition: ccp(0.85f, 0.6f)];
+    [fire setColor:[CCColor redColor]];
+    [fire setScaleX:0.5f];
+    [fire setScaleY:0.5f];
+    [fire setGravity:CGPointMake(50, -150)];
+    [self addChild:fire];
     
 //    // Spinning scene button
 //    CCButton *recordsButton = [CCButton buttonWithTitle:@"Records" fontName:@"Verdana-Bold" fontSize:18.0f];

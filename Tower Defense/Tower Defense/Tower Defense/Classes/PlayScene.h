@@ -37,12 +37,12 @@
 @property(atomic, readwrite) int spawnPoint_x;
 @property(atomic, readwrite) int spawnPoint_y;
 @property(atomic, readwrite) float fireTiming;
+@property(atomic, readwrite) BOOL isTrash;
+@property(atomic, readwrite) NSMutableDictionary * towerMap;
 
 
 + (PlayScene *)scene;
 - (id)init;
-- (void)updateGoldLabel;
-- (void)updateLevelLabel;
 - (void) setUpTowerWithSprite: sprite andObject: object;
 - (void) setUpTowerButtons;
 - (void) monsterArrivedToEnd;

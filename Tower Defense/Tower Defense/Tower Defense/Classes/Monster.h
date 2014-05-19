@@ -15,12 +15,14 @@
 @interface Monster : CCSprite
 
 @property(atomic, readwrite) int HP;
+@property(atomic, readwrite) int max_HP;
 @property(atomic, readwrite) int level;
 @property(atomic, readwrite) int tilePosition;
 @property(atomic, readwrite) BOOL flies;
 @property(atomic, readwrite) id game;
 @property(atomic, readwrite) int gold;
 @property(atomic, readwrite) CCTiledMapObjectGroup * roadGroup;
+@property(atomic, readwrite) CCSprite * lifeBar;
 
 + (id) initMonsterWithLevel: (int) level andFlies: (BOOL) flies inGame: (id) game;
 - (void) move;

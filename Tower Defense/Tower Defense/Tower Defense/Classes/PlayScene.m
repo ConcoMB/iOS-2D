@@ -31,11 +31,12 @@
     _isEditMode = true;
     _level = 1;
     _gold = 50;
+    _towerMap = [NSMutableDictionary dictionary];
     _towers = [NSMutableArray array];
     _monsters = [NSMutableArray array];
     _occupiedTiles = [NSMutableSet set];
     _selectedTowerSprite = [CCSprite spriteWithImageNamed:@"selected_tower_sprite.png"];
-    [_selectedTowerSprite setPosition:CGPointMake(-1, -1)];
+    [_selectedTowerSprite setPosition:CGPointMake(-100, -100)];
     [self addChild:_selectedTowerSprite];
     
     CCLabelTTF * goldTxtLabel = [CCLabelTTF labelWithString:@"Gold: " fontName:@"Arial" fontSize:15];
@@ -82,7 +83,7 @@
     _tileSize = [_tiledMap tileSize];
     
     _attackButton = [CCButton buttonWithTitle:@"ATTACK"];
-    [_attackButton setColor: [CCColor redColor]];
+    [_attackButton setColor: [CCColor yellowColor]];
 //    [_attackButton setBackgroundColor:[CCColor redColor] forState:CCControlStateNormal];
 //    [_attackButton setBackgroundColor:[CCColor grayColor] forState:CCControlStateDisabled];
     _attackButton.positionType = CCPositionTypeNormalized;
@@ -138,23 +139,39 @@
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     // 1
-    if (_isEditMode && _selectedTower != NULL && _gold >= _selectedTowerPrice)
-    {
+    if (_isEditMode) {
         CGPoint touchLocation = [touch locationInNode:self];
-
         CGPoint tilePoint = [self getTilePointOnX:touchLocation.x andY: touchLocation.y];
-        if ([_occupiedTiles containsObject:[NSValue valueWithCGPoint:tilePoint]]) {
-            return;
+        NSString * key = [NSString stringWithFormat:@"%i_%i", (int)tilePoint.x, (int)tilePoint.y ];
+        NSValue * value = [NSValue valueWithCGPoint:tilePoint];
+        if (_isTrash) {
+            if (![_occupiedTiles containsObject: value]) {
+                return;
+            }
+            Tower * t = (Tower *)[_towerMap objectForKey: key];
+            if (t != NULL) {
+                [_towers removeObject:t];
+                [_towerMap removeObjectForKey:key];
+                [_occupiedTiles removeObject: value];
+                [self removeChild:t];
+            }
         }
-        _gold -= _selectedTowerPrice;
-        [_goldLabel setString: [@(_gold) stringValue]];
-        CCSprite * touchedTile = [_background tileAt:tilePoint];
-        Tower * newTower = [Tower initTower:_selectedTower.name];
-//        CCSprite * newTower = [CCSprite spriteWithImageNamed:_selectedTower.name];
-        [newTower setPosition:CGPointMake(touchedTile.position.x, touchedTile.position.y)];
-        [_towers addObject: newTower];
-        [_occupiedTiles addObject: [NSValue valueWithCGPoint:tilePoint]];
-        [self addChild:newTower];
+        else if (_selectedTower != NULL && _gold >= _selectedTowerPrice) {
+    
+            if ([_occupiedTiles containsObject:value]) {
+                return;
+            }
+            _gold -= _selectedTowerPrice;
+            [_goldLabel setString: [@(_gold) stringValue]];
+            CCSprite * touchedTile = [_background tileAt:tilePoint];
+            Tower * newTower = [Tower initTower:_selectedTower.name];
+    //        CCSprite * newTower = [CCSprite spriteWithImageNamed:_selectedTower.name];
+            [newTower setPosition:CGPointMake(touchedTile.position.x, touchedTile.position.y)];
+            [_towers addObject: newTower];
+            [_towerMap setObject:newTower forKey: key];
+            [_occupiedTiles addObject: [NSValue valueWithCGPoint:tilePoint]];
+            [self addChild:newTower];
+        }
     }
 }
 
@@ -163,8 +180,6 @@
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"You lost!" message:@"The pokemons ate your soul" delegate: self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
     [[CCDirector sharedDirector] pause];
-    [[CCDirector sharedDirector] replaceScene:[IntroScene scene]
-                               withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown duration:0.2f]];
 }
 
 - (void) update:(CCTime)delta {
@@ -191,7 +206,7 @@
                     [fire setPosition: CGPointMake(t.position.x + _tileSize.height /2, t.position.y + _tileSize.width / 2)];
                     [_physicsWorld addChild:fire];
                     
-                    CCActionMoveTo *actionMove   = [CCActionMoveTo actionWithDuration:0.2f position:minDistanceMonster.position];
+                    CCActionMoveTo *actionMove   = [CCActionMoveTo actionWithDuration:((float)minDistance / 200) position:minDistanceMonster.position];
                     CCActionRemove *actionRemove = [CCActionRemove action];
                     [fire runAction:[CCActionSequence actionWithArray:@[actionMove,actionRemove]]];
                 }
@@ -205,13 +220,13 @@
     [self setUpTowerWithSprite: @"land_1.png" andObject: @"land_1"];
     [self setUpTowerWithSprite: @"land_2.png" andObject: @"land_2"];
     [self setUpTowerWithSprite: @"land_3.png" andObject: @"land_3"];
-    [self setUpTowerWithSprite: @"land_4.png" andObject: @"land_4"];
     [self setUpTowerWithSprite: @"air_1.png" andObject: @"air_1"];
     [self setUpTowerWithSprite: @"air_2.png" andObject: @"air_2"];
     [self setUpTowerWithSprite: @"air_3.png" andObject: @"air_3"];
     [self setUpTowerWithSprite: @"land_and_air_1.png" andObject: @"land_and_air_1"];
     [self setUpTowerWithSprite: @"land_and_air_2.png" andObject: @"land_and_air_2"];
     [self setUpTowerWithSprite: @"land_and_air_3.png" andObject: @"land_and_air_3"];
+    [self setUpTowerWithSprite: @"trash.png" andObject: @"trash"];
 }
 
 - (void) setUpTowerWithSprite: sprite andObject: object {
@@ -222,12 +237,25 @@
     int x = (int)[[tower valueForKey:@"x"] integerValue];
     int y = (int)[[tower valueForKey:@"y"] integerValue];
     [towerButton setPosition:CGPointMake(x + _tileSize.width / 2, y + _tileSize.height / 2)];
-    [towerButton setTarget:self selector:@selector(onTowerButtonClicked:)];
+    if ([object isEqualToString:@"trash"]) {
+        [towerButton setTarget:self selector:@selector(onTrashButtonClicked:)];
+    } else {
+        [towerButton setTarget:self selector:@selector(onTowerButtonClicked:)];
+    }
     [self addChild:towerButton];
+}
+
+- (void) onTrashButtonClicked:(id) sender {
+    _isTrash = YES;
+    int y = [(CCButton*)sender position].y / _tileSize.height;
+    [_selectedTowerSprite setPosition:CGPointMake(_tileSize.width / 2, y * _tileSize.height + _tileSize.height / 2)];
+    _selectedTowerPrice = 0;
+    [_priceLabel setString:@""];
 }
 
 - (void)onTowerButtonClicked:(id)sender
 {
+    _isTrash = NO;
     _selectedTower = sender;
     int y = [(CCButton*)sender position].y / _tileSize.height;
     [_selectedTowerSprite setPosition:CGPointMake(_tileSize.width / 2, y * _tileSize.height + _tileSize.height / 2)];
@@ -268,15 +296,25 @@
 }
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if ([alertView.title isEqualToString:@"You won the game!"]) {
+    if ([alertView.title isEqualToString:@"You won the game!"] || [alertView.title isEqualToString:@"You lost!"]) {
+        [[CCDirector sharedDirector] resume];
         [[CCDirector sharedDirector] replaceScene:[IntroScene scene] withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown duration:0.2f]];
     }
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair fireCollision:(Fire *)fire monsterCollision:(Monster *)monster {
-    if ([monster harm: fire.damage]) {
+        if ([monster harm: fire.damage]) {
         [_monsters removeObject:monster];
         [monster removeFromParent];
+        CCParticleExplosion * explosion = [[CCParticleExplosion alloc] init];
+        //        [explosion setLife:0.5];
+        [explosion setStartColor:[CCColor yellowColor]];
+        [explosion setEndColor:[CCColor orangeColor]];
+        
+        [explosion setPosition: CGPointMake(monster.position.x + _tileSize.width/2, monster.position.y + _tileSize.width/2)];
+        [explosion setScale:0.05];
+        [explosion setDuration:0.05];
+        [self addChild:explosion];
         _gold = _gold += monster.gold;
         _goldLabel.string = [NSString stringWithFormat:@"%i", _gold];
         if ([_monsters firstObject] == NULL) {

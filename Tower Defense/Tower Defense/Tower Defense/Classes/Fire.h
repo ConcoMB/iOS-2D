@@ -14,6 +14,7 @@
 @interface Fire : CCSprite
 
 @property(atomic, readwrite) int damage;
+@property(atomic, readwrite) CCColor * color;
 
 + (id) initFireWithDamage: (int) damage;
 
