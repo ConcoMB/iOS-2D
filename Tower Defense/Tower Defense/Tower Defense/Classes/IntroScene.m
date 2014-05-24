@@ -68,12 +68,7 @@
     [fire setGravity:CGPointMake(50, -150)];
     [self addChild:fire];
     
-//    // Spinning scene button
-//    CCButton *recordsButton = [CCButton buttonWithTitle:@"Records" fontName:@"Verdana-Bold" fontSize:18.0f];
-//    recordsButton.positionType = CCPositionTypeNormalized;
-//    recordsButton.position = ccp(0.5f, 0.15f);
-//    [self addChild:recordsButton];
-	
+    [[OALSimpleAudio sharedInstance] playBg:@"intro.mp3" loop:YES];
     // done
 	return self;
 }

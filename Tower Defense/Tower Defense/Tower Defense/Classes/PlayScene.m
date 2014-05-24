@@ -27,6 +27,11 @@
     
     _tiledMap = [[CCTiledMap alloc]initWithFile:@"tileMap.tmx"];
     [self addChild:_tiledMap];
+    [[OALSimpleAudio sharedInstance] playBg:@"edit.mp3" loop:YES];
+
+    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"spritesheet.plist"];
+    _spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"spritesheet.png"];
     
     _isEditMode = true;
     _level = 1;
@@ -84,17 +89,21 @@
     
     _attackButton = [CCButton buttonWithTitle:@"ATTACK"];
     [_attackButton setColor: [CCColor yellowColor]];
-//    [_attackButton setBackgroundColor:[CCColor redColor] forState:CCControlStateNormal];
-//    [_attackButton setBackgroundColor:[CCColor grayColor] forState:CCControlStateDisabled];
     _attackButton.positionType = CCPositionTypeNormalized;
     _attackButton.position = ccp(0.9f, 0.05f);
     [_attackButton setTarget:self selector:@selector(onAttackButtonClicked:)];
+    
+    _pauseButton = [CCButton buttonWithTitle:@"PAUSE"];
+    [_pauseButton setColor: [CCColor whiteColor]];
+    _pauseButton.positionType = CCPositionTypeNormalized;
+    _pauseButton.position = ccp(0.7f, 0.05f);
+    [_pauseButton setTarget:self selector:@selector(onPauseButtonClicked:)];
+    [self addChild:_pauseButton];
 
     [self addChild:_attackButton];
     if(_objectGroup == NULL){
         return false;
     }
-    
     
     [self setUpTowerButtons];
     [self calculateRoadTiles];
@@ -105,7 +114,9 @@
     _physicsWorld.collisionDelegate = self;
     [self addChild:_physicsWorld];
     
-	return self;
+    _pauseScreen = [[PauseScreen alloc]init];
+    
+    return self;
 }
 
 - (void) calculateRoadTiles
@@ -177,6 +188,7 @@
 
 - (void) monsterArrivedToEnd
 {
+    [[OALSimpleAudio sharedInstance] playBg:@"lost.mp3" loop:YES];
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"You lost!" message:@"The pokemons ate your soul" delegate: self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
     [[CCDirector sharedDirector] pause];
@@ -206,7 +218,7 @@
                     [fire setPosition: CGPointMake(t.position.x + _tileSize.height /2, t.position.y + _tileSize.width / 2)];
                     [_physicsWorld addChild:fire];
                     
-                    CCActionMoveTo *actionMove   = [CCActionMoveTo actionWithDuration:((float)minDistance / 200) position:minDistanceMonster.position];
+                    CCActionMoveTo *actionMove   = [CCActionMoveTo actionWithDuration:((float)minDistance / 400) position:minDistanceMonster.position];
                     CCActionRemove *actionRemove = [CCActionRemove action];
                     [fire runAction:[CCActionSequence actionWithArray:@[actionMove,actionRemove]]];
                 }
@@ -253,6 +265,14 @@
     [_priceLabel setString:@""];
 }
 
+
+- (void)onPauseButtonClicked:(id)sender
+{
+    [[CCDirector sharedDirector] pause];
+    [self addChild:_pauseScreen];
+}
+
+
 - (void)onTowerButtonClicked:(id)sender
 {
     _isTrash = NO;
@@ -271,6 +291,7 @@
     if (_isEditMode)
     {
         _isEditMode = false;
+        [[OALSimpleAudio sharedInstance] playBg:@"battle.mp3" loop:YES];
         [self setMonstersForLevel:_level];
         int i = 0;
         for (Monster * monster in _monsters) {
@@ -284,16 +305,20 @@
     _isEditMode = YES;
     _level++;
     if (_level == 11) {
+        [[OALSimpleAudio sharedInstance] playBg:@"champ.mp3" loop:YES];
         _levelLabel.string = [NSString stringWithFormat:@"%i", _level];
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"You won the game!" message:@"You caught them all" delegate: self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
     } else {
+        [[OALSimpleAudio sharedInstance] playBg:@"edit.mp3" loop:YES];
         _levelLabel.string = [NSString stringWithFormat:@"%i", _level];
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Vicotry!" message:@"Gotta catch'em all" delegate: self cancelButtonTitle:nil otherButtonTitles: @"Great", nil];
         [alert show];
 
     }
 }
+
+
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if ([alertView.title isEqualToString:@"You won the game!"] || [alertView.title isEqualToString:@"You lost!"]) {

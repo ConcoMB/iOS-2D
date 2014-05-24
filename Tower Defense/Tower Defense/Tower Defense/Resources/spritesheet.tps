@@ -4,9 +4,9 @@
         <key>fileFormatVersion</key>
         <int>3</int>
         <key>texturePackerVersion</key>
-        <string>3.3.2</string>
+        <string>3.3.4</string>
         <key>fileName</key>
-        <string>/Users/concoMB/Desktop/tower_def_sprites.tps</string>
+        <string>/Users/concoMB/Desktop/spritesheet.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -92,7 +92,7 @@
             <key>freeSizeMode</key>
             <enum type="AlgorithmSettings::AlgorithmFreeSizeMode">Best</enum>
             <key>sizeConstraints</key>
-            <enum type="AlgorithmSettings::SizeConstraints">POT</enum>
+            <enum type="AlgorithmSettings::SizeConstraints">AnySize</enum>
             <key>forceSquared</key>
             <false/>
             <key>forceWordAligned</key>
@@ -172,25 +172,30 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>land_1.png</filename>
-            <filename>land_2.png</filename>
-            <filename>land_3.png</filename>
-            <filename>land_4.png</filename>
-            <filename>land_and_air_1.png</filename>
-            <filename>land_and_air_2.png</filename>
-            <filename>land_and_air_3.png</filename>
-            <filename>air_3.png</filename>
-            <filename>air_2.png</filename>
-            <filename>air_1.png</filename>
-            <filename>enemy_air_1.png</filename>
-            <filename>enemy_air_2.png</filename>
-            <filename>enemy_air_3.png</filename>
-            <filename>enemy_air_4.png</filename>
-            <filename>enemy_land_1.png</filename>
-            <filename>enemy_land_2.png</filename>
-            <filename>enemy_land_3.png</filename>
-            <filename>enemy_land_4.png</filename>
-            <filename>fireball.gif</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/air_1.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/air_2.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/air_3.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/enemy_air_1.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/enemy_air_2.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/enemy_air_3.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/enemy_air_4.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/enemy_land_1.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/enemy_land_2.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/enemy_land_3.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/enemy_land_4.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/greatball.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/land_1.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/land_2.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/land_3.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/land_4.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/land_and_air_1.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/land_and_air_2.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/land_and_air_3.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/life.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/pokeball.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/selected_tower_sprite.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/trash.png</filename>
+            <filename>../iPhoneIsForRichPeople/Tower Defense/Tower Defense/Tower Defense/Resources/ultraball.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

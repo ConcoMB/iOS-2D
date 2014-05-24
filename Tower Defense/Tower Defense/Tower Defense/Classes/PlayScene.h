@@ -12,6 +12,7 @@
 #import "Monster.h"
 #import "Fire.h"
 #import "IntroScene.h"
+#import "PauseScreen.h"
 
 @interface PlayScene : CCScene <CCPhysicsCollisionDelegate, UIAlertViewDelegate>
 
@@ -39,7 +40,9 @@
 @property(atomic, readwrite) float fireTiming;
 @property(atomic, readwrite) BOOL isTrash;
 @property(atomic, readwrite) NSMutableDictionary * towerMap;
-
+@property(atomic, readwrite) CCSpriteBatchNode *spriteSheet;
+@property(atomic, readwrite) CCButton * pauseButton;
+@property(atomic, readwrite) PauseScreen * pauseScreen;
 
 + (PlayScene *)scene;
 - (id)init;
