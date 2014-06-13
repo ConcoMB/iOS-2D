@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>assets/5Hoxo0s.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {1000, 500}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {1000, 500}}</string>
+			<key>sourceSize</key>
+			<string>{1000, 500}</string>
+		</dict>
+		<key>assets/ch1.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{929, 503}, {64, 48}}</string>
+			<key>offset</key>
+			<string>{0, -1}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{3, 12}, {64, 48}}</string>
+			<key>sourceSize</key>
+			<string>{70, 70}</string>
+		</dict>
+		<key>assets/ch2.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{863, 503}, {64, 48}}</string>
+			<key>offset</key>
+			<string>{0, -1}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{3, 12}, {64, 48}}</string>
+			<key>sourceSize</key>
+			<string>{70, 70}</string>
+		</dict>
+		<key>assets/ch3.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{863, 553}, {64, 47}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{3, 12}, {64, 47}}</string>
+			<key>sourceSize</key>
+			<string>{70, 70}</string>
+		</dict>
+		<key>assets/ch4.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{929, 553}, {64, 46}}</string>
+			<key>offset</key>
+			<string>{0, -1}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{3, 13}, {64, 46}}</string>
+			<key>sourceSize</key>
+			<string>{70, 70}</string>
+		</dict>
+		<key>assets/green.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1003, 1}, {696, 310}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {696, 310}}</string>
+			<key>sourceSize</key>
+			<string>{696, 310}</string>
+		</dict>
+		<key>assets/mountain_bot.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1701, 1}, {340, 672}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {340, 672}}</string>
+			<key>sourceSize</key>
+			<string>{340, 672}</string>
+		</dict>
+		<key>assets/mountaint_top.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1003, 313}, {340, 672}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {340, 672}}</string>
+			<key>sourceSize</key>
+			<string>{340, 672}</string>
+		</dict>
+		<key>assets/pilar_bot.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{675, 503}, {105, 672}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {105, 672}}</string>
+			<key>sourceSize</key>
+			<string>{105, 672}</string>
+		</dict>
+		<key>assets/pilar_top.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 503}, {106, 672}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {106, 672}}</string>
+			<key>sourceSize</key>
+			<string>{106, 672}</string>
+		</dict>
+		<key>assets/temp (1).png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{782, 503}, {448, 79}}</string>
+			<key>offset</key>
+			<string>{-8, 5}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{7, 10}, {448, 79}}</string>
+			<key>sourceSize</key>
+			<string>{478, 110}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{2048, 2048}</string>
+		<key>textureFileName</key>
+		<string>assets.png</string>
+	</dict>
+</dict>
+</plist>
