@@ -20,7 +20,7 @@
 		<key>assets/ch1.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{929, 503}, {64, 48}}</string>
+			<string>{{741, 659}, {64, 48}}</string>
 			<key>offset</key>
 			<string>{0, -1}</string>
 			<key>rotated</key>
@@ -33,7 +33,7 @@
 		<key>assets/ch2.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{863, 503}, {64, 48}}</string>
+			<string>{{675, 659}, {64, 48}}</string>
 			<key>offset</key>
 			<string>{0, -1}</string>
 			<key>rotated</key>
@@ -46,7 +46,7 @@
 		<key>assets/ch3.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{863, 553}, {64, 47}}</string>
+			<string>{{807, 659}, {64, 47}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -59,7 +59,7 @@
 		<key>assets/ch4.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{929, 553}, {64, 46}}</string>
+			<string>{{807, 708}, {64, 46}}</string>
 			<key>offset</key>
 			<string>{0, -1}</string>
 			<key>rotated</key>
@@ -68,6 +68,19 @@
 			<string>{{3, 13}, {64, 46}}</string>
 			<key>sourceSize</key>
 			<string>{70, 70}</string>
+		</dict>
+		<key>assets/coin.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{675, 503}, {154, 204}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {154, 204}}</string>
+			<key>sourceSize</key>
+			<string>{154, 204}</string>
 		</dict>
 		<key>assets/green.png</key>
 		<dict>
@@ -111,11 +124,11 @@
 		<key>assets/pilar_bot.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{675, 503}, {105, 672}}</string>
+			<string>{{1, 611}, {105, 672}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
-			<false/>
+			<true/>
 			<key>sourceColorRect</key>
 			<string>{{0, 0}, {105, 672}}</string>
 			<key>sourceSize</key>
@@ -137,7 +150,7 @@
 		<key>assets/temp (1).png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{782, 503}, {448, 79}}</string>
+			<string>{{881, 503}, {448, 79}}</string>
 			<key>offset</key>
 			<string>{-8, 5}</string>
 			<key>rotated</key>

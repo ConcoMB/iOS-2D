@@ -13,6 +13,7 @@
     CCNode *_botPart;
     CCNode *_mountainTop;
     CCNode *_mountainBot;
+    CCNode *_coin;
 }
 
 #define ARC4RANDOM_MAX      0x100000000
@@ -31,6 +32,7 @@ static const CGFloat correction = -150.f;
     _mountainTop.physicsBody.sensor = TRUE;
     _mountainBot.physicsBody.collisionType = @"level";
     _mountainBot.physicsBody.sensor = TRUE;
+    _coin.physicsBody.collisionType = @"coin";
 }
 
 - (void)setupRandomPosition {
@@ -41,10 +43,14 @@ static const CGFloat correction = -150.f;
     
     _mountainBot.position = ccp(_mountainBot.position.x, minimumYPositionTopPipe + (random * range)  + correction);
     _mountainTop.position = ccp(_mountainTop.position.x, _mountainTop.position.y + pipeDistance + correction);
+    _coin.position = ccp(_coin.position.x + (random * range), _coin.position.y + (random * range));
 }
 
 - (void) setLevel:(int)level {
     double r = ((double)arc4random() / ARC4RANDOM_MAX);
+//    if (r < 0.7) {
+//        [self removeChild:_coin];
+//    }
     if (level == 1) {
         [self removeChild:_mountainBot];
         [self removeChild:_mountainTop];

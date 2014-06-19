@@ -35,6 +35,8 @@ typedef NS_ENUM(NSInteger, DrawingOrder) {
     int _level;
     CCLabelTTF * _levelUp;
     CCLabelTTF * _levelN;
+    CCLabelTTF * _coinsLabel;
+    int _coins;
 }
 
 - (void)didLoadFromCCB {
@@ -45,6 +47,7 @@ typedef NS_ENUM(NSInteger, DrawingOrder) {
 - (void)initialize: (int) diff {
     self.userInteractionEnabled = TRUE;
     _level = diff;
+    _coins = 0;
     [self setUpLevel];
     _grounds = @[_ground1, _ground2];
     for (CCNode *ground in _grounds) {
@@ -144,7 +147,14 @@ typedef NS_ENUM(NSInteger, DrawingOrder) {
     if (_points % POINTS_FOR_LEVEL_UP == 0) {
         [self levelUp];
     }
-    _scoreLabel.string = [NSString stringWithFormat:@"%d", _points];
+    _scoreLabel.string = [NSString stringWithFormat:@"Points: %d", _points];
+    return TRUE;
+}
+
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair charizard:(CCNode *)charizard coin:(CCNode *)coin {
+    [coin removeFromParent];
+    _coins++;
+    _coinsLabel.string = [NSString stringWithFormat:@"Coins: %d", _coins];
     return TRUE;
 }
 
